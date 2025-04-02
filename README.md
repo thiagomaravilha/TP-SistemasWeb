@@ -4,46 +4,76 @@
 
 ### Resumo
 
-Este projeto é um sistema de gestão para barbearia, desenvolvido para agendamento de serviços e controle de clientes. Utilizando HTML e CSS até o momento.
-A futura integração com banco de dados permitirá persistir as informações de forma dinâmica.
+Este projeto consiste em um sistema de gestão para barbearia, desenvolvido com o objetivo de facilitar o agendamento de serviços e o controle de clientes. A interface simples e intuitiva permite o cadastro de clientes, a gestão de serviços oferecidos e a organização dos agendamentos. Inicialmente desenvolvido utilizando HTML e CSS, o sistema foi aprimorado com a integração de um banco de dados para persistência das informações.
 
 <!-- Apresentar o tema. -->
-### 1. Tema
+### 1. Funcionalidades Implementadas
 
-  O trabalho final tem como tema o desenvolvimento de um sistema de gestão para barbearia, visando melhorar a organização da barbearia e a experiência do cliente
+- Cadastro de clientes
 
-<!-- Descrever e limitar o escopo da aplicação. -->
-### 2. Escopo
+- Cadastro de serviços oferecidos pela barbearia
 
-  Este projeto terá as seguintes funcionalidades:
-  
-    - Cadastro de clientes e serviços
-    - Agendamento de serviços (data, hora e tipo de serviço)
-    - Exibição de serviços e clientes cadastrados
-    - Interface simples e prática para os usuários
+- Agendamento de serviços com data e horário
+
+- Listagem de serviços cadastrados
+
+- Listagem de clientes registrados
+
+- Interface amigável e responsiva
+### 2. Funcionalidades Previstas e Não Implementadas
+
+- Autenticação e login de usuários
+
+- Integração com sistemas de pagamento
+
+- Envio de notificações automáticas para os clientes
+
+- Relatórios detalhados sobre clientes e agendamentos
 
 <!-- Apresentar restrições de funcionalidades e de escopo. -->
-### 3. Restrições
+### 3. Outras Funcionalidades Implementadas
 
-  Não serão considerados:
-  
-    - Funcionalidades de autenticação ou login de usuários.
-    - Integração com sistemas de pagamento ou envio de notificações.
-    - Relatórios detalhados sobre clientes ou agendamentos.
-    - Armazenamento persistente de dados (a integração com banco de dados será implementada em uma futura atualização).
+- Validação de cliente (Não será permitido excluir algum CLIENTE, caso tenha ele AGENDAMENTO marcado)
 
-<!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->
-### 4. Protótipo
+- Design responsivo utilizando CSS
 
-  Protótipos foram elaborados para as principais páginas, incluindo:
-  
-    - Página inicial: Navegação entre as principais seções do sistema.
-    - Cadastro de clientes: Formulário para registrar novos clientes.
-    - Cadastro de serviços: Formulário para adicionar novos serviços à barbearia.
-    - Serviços disponíveis: Exibição dos serviços cadastrados com seus preços.
-    - Clientes cadastrados: Exibição dos clientes cadastrados na plataforma.
-    - Agendamento de serviços: Formulário para agendar um serviço
+- Estrutura modular para facilitar futuras expansões
 
-### 5. Referências
+### 4. Principais Desafios e Dificuldades
 
-  HTML e CSS: W3C. HTML5: A vocabulary and associated APIs for HTML and XHTML. Disponível em: https://www.w3.org/TR/html5/
+- Definição da melhor estrutura para armazenamento de dados
+
+- Implementação de um fluxo de agendamento intuitivo
+
+- Ajuste da interface para garantir boa experiência do usuário
+
+- Gerenciamento do tempo para entrega das funcionalidades dentro do prazo
+
+### 5. Instruções para Instalação e Execução
+
+1. Clone o repositório:
+``` https://github.com/thiagomaravilha/TP-SistemasWeb.git ```
+
+2. Acesse o diretório do projeto:
+``` cd TP-SistemasWeb ```
+
+3. Instalar Dependencias:
+``` pip install -r requirements.txt ```
+
+4. Configurar o Banco de Dados.
+  . Configure o servidor local (XAMPP, WAMP, etc.).
+  . Importe o banco de dados fornecido no diretório database.
+  . Execute o servidor e acesse ``` http://localhost/PORTA ```
+
+Para Mais detalhes, link da apresentação do sistema:
+[Apresentacao Do Sistema](https://youtu.be/skY4hgkAUc4)
+
+
+
+### 6. Referências
+
+W3C. HTML5: A vocabulary and associated APIs for HTML and XHTML. Disponível em: https://www.w3.org/TR/html5/
+
+Documentação oficial do CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+
+Recursos adicionais sobre desenvolvimento web: https://www.w3schools.com/
