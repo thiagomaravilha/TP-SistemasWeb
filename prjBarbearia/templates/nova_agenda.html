@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Agenda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Adicionar Nova Agenda</h1>
+    <form action="{{ url_for('nova_agenda') }}" method="post">
+        <label for="id_cliente">Cliente:</label>
+        <select id="id_cliente" name="id_cliente" required>
+            {% for cliente in clientes %}
+            <option value="{{ cliente['id_cliente'] }}">{{ cliente['nome'] }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="id_servico">Serviço:</label>
+        <select id="id_servico" name="id_servico" required>
+            {% for servico in servicos %}
+            <option value="{{ servico['id_servico'] }}">{{ servico['descricao'] }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required><br>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required><br>
+
+        <label for="observacoes">Observações:</label>
+        <textarea id="observacoes" name="observacoes"></textarea><br>
+
+        <button type="submit">Adicionar Agenda</button>
+    </form>
+    <br>
+    <a href="{{ url_for('agendas') }}"><button>Voltar à Lista de Agendas</button></a>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+</html>

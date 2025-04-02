@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Cliente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Adicionar Novo Cliente</h1>
+        <form action="{{ url_for('novo_cliente') }}" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco">
+
+            <button type="submit" class="button">Adicionar Cliente</button>
+        </form>
+        <a href="{{ url_for('clientes') }}"><button>Voltar à Lista de Clientes</button></a>
+    </div>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Editar Cliente</h1>
+    <form action="{{ url_for('editar_cliente', id_cliente=cliente['id_cliente']) }}" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ cliente['nome'] }}" required><br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" value="{{ cliente['telefone'] }}"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ cliente['email'] }}"><br>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" value="{{ cliente['endereco'] }}"><br>
+
+        <button type="submit">Salvar Alterações</button>
+    </form>
+    <br>
+    <a href="{{ url_for('clientes') }}"><button>Voltar à Lista de Clientes</button></a>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+</html>

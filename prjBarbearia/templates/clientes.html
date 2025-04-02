@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+
+    <!-- Campo de pesquisa -->
+    <form method="GET" action="{{ url_for('clientes') }}">
+        <input type="text" name="search" placeholder="Pesquisar cliente pelo nome">
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Endereço</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente['id_cliente'] }}</td>
+                <td>{{ cliente['nome'] }}</td>
+                <td>{{ cliente['telefone'] }}</td>
+                <td>{{ cliente['email'] }}</td>
+                <td>{{ cliente['endereco'] }}</td>
+                <td>
+                    <form action="{{ url_for('excluir_cliente', id_cliente=cliente['id_cliente']) }}" method="post" style="display:inline;">
+                        <button type="submit">Excluir</button>
+                    </form>
+                    <a href="{{ url_for('editar_cliente', id_cliente=cliente['id_cliente']) }}"><button>Alterar</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('novo_cliente') }}"><button>Adicionar Novo Cliente</button></a>
+    <br><br>
+    <a href="{{ url_for('index') }}"><button>Voltar ao Menu Inicial</button></a>
+ <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

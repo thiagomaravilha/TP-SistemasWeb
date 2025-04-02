@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema de Gestão da BarberShop</h1>
+    <div class="options-container">
+        <div class="option-box">
+            <h2>Clientes</h2>
+            <p>Gerencie os clientes cadastrados no sistema.</p>
+            <a href="{{ url_for('clientes') }}"><button>Ver Clientes</button></a>
+        </div>
+        <div class="option-box">
+            <h2>Serviços</h2>
+            <p>Gerencie os serviços oferecidos pela barbearia.</p>
+            <a href="{{ url_for('servicos') }}"><button>Ver Serviços</button></a>
+        </div>
+        <div class="option-box">
+            <h2>Agendas</h2>
+            <p>Gerencie as agendas de clientes e serviços.</p>
+            <a href="{{ url_for('agendas') }}"><button>Ver Agendas</button></a>
+        </div>
+    </div>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Serviços</h1>
+
+    <!-- Campo de pesquisa -->
+    <form method="GET" action="{{ url_for('servicos') }}">
+        <input type="text" name="search" placeholder="Pesquisar serviço pela descrição">
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for servico in servicos %}
+            <tr>
+                <td>{{ servico['id_servico'] }}</td>
+                <td>{{ servico['descricao'] }}</td>
+                <td>{{ servico['valor'] }}</td>
+                <td>
+                    <form action="{{ url_for('excluir_servico', id_servico=servico['id_servico']) }}" method="post" style="display:inline;">
+                        <button type="submit">Excluir</button>
+                    </form>
+                    <a href="{{ url_for('editar_servico', id_servico=servico['id_servico']) }}"><button>Alterar</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('novo_servico') }}"><button>Adicionar Novo Serviço</button></a>
+    <br><br>
+    <a href="{{ url_for('index') }}"><button>Voltar ao Menu Inicial</button></a>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+</html>

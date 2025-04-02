@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Agendas</h1>
+
+    <!-- Campo de pesquisa -->
+    <form method="GET" action="{{ url_for('agendas') }}">
+        <input type="text" name="search" placeholder="Pesquisar agenda pelo nome do cliente">
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <!-- Opções de ordenação -->
+    <div class="sort-options">
+        <p>Ordenar por:
+            <a href="{{ url_for('agendas', order_by='data') }}"><button>Data</button></a>
+            <a href="{{ url_for('agendas', order_by='nome') }}"><button>Nome do Cliente</button></a>
+        </p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Serviço</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Observações</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for agenda in agendas %}
+            <tr>
+                <td>{{ agenda['id_agenda'] }}</td>
+                <td>{{ agenda['cliente'] }}</td>
+                <td>{{ agenda['servico'] }}</td>
+                <td>{{ agenda['data'] }}</td>
+                <td>{{ agenda['hora'] }}</td>
+                <td>{{ agenda['observacoes'] }}</td>
+                <td>
+                    <form action="{{ url_for('excluir_agenda', id_agenda=agenda['id_agenda']) }}" method="post" style="display:inline;">
+                        <button type="submit">Excluir</button>
+                    </form>
+                    <a href="{{ url_for('editar_agenda', id_agenda=agenda['id_agenda']) }}"><button>Alterar</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('nova_agenda') }}"><button>Adicionar Nova Agenda</button></a>
+    <br><br>
+    <a href="{{ url_for('index') }}"><button>Voltar ao Menu Inicial</button></a>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
