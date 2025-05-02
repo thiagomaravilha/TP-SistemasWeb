@@ -55,15 +55,15 @@ Este projeto consiste em um sistema de gestão para barbearia, desenvolvido com 
 ``` https://github.com/thiagomaravilha/TP-SistemasWeb.git ```
 
 2. Acesse o diretório do projeto:
-``` cd TP-SistemasWeb ```
+``` cd TP-SistemasWeb/prjBarbearia ```
 
 3. Instalar Dependencias:
 ``` pip install -r requirements.txt ```
 
-4. Configurar o Banco de Dados.
-  . Configure o servidor local (XAMPP, WAMP, etc.).
-  . Importe o banco de dados fornecido no diretório database.
-  . Execute o servidor e acesse ``` http://localhost/PORTA ```
+4. Configurar o Banco de Dados:
+    Configure o servidor local (XAMPP, WAMP, etc.) >
+    Importe o banco de dados fornecido no diretório ``` TP-SistemasWeb/database ``` >
+    Execute o servidor e acesse ``` http://localhost/PORTA ```
 
 Para Mais detalhes, link da apresentação do sistema:
 [Apresentacao Do Sistema](https://drive.google.com/file/d/1wDqRlHjKiOnRGGGAJvy0ZfGCNmbt627v/view?usp=sharing)
